@@ -1,0 +1,31 @@
+.signin{
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRbFTvJWIvAGimfbPS12scl9lxImUR-FElaw&s");
+    background-size: cover;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loginform{
+    background-color: #ffff;
+    padding: 30px;
+    border: 1px solid rgb(168, 157, 157);
+    border-radius: 1px;
+}
+.loginform2{
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 5px;
+    border: rgb(129,121,121);
+    border-radius: 1px;
+}
+#login-btn{
+    background-color: #1773EA;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    margin-top: 8px;
+    cursor: pointer;
+}

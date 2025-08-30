@@ -1,0 +1,106 @@
+.card{
+    max-width: 500px;
+    height: max-content;
+    margin: 25px auto;
+    border: 1px solid rgb(173,173,173);
+    border-radius: 5px;
+}
+.card-header{
+    display: flex;
+    
+}
+.card-header>h5{
+    margin: 0;
+    padding: 11px;
+}
+
+.card-pic img{
+    width: 40px;
+    border-radius: 60px;
+    padding: 5px;
+    object-fit: contain;
+    height: auto;
+   
+}
+.card-image img{
+    width: 100%;
+}
+.card-content{
+    text-align: left;
+    line-height: 4px;
+    padding: 5px 10px ;
+    border-bottom: 1px solid rgb(173,173,173);;
+}
+.add-comment{
+    display: flex;
+    align-items: center;
+}
+.add-comment input{
+    margin: 0;
+    outline: none;
+    border: none;
+    border: 10px;
+}
+.comment {
+    border: none;
+    background-color: none;
+    font-weight:bolder ;
+    cursor: pointer;
+    color: rgb(70, 135, 181);
+}
+.commentsection{
+    flex-grow: 4;
+    text-align: left;
+    margin-left: 10px;
+  }
+  .closecomment{
+    position: fixed;
+    top: 1%;
+    right: 5%;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  .showcomment{
+    width: 100vw;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(16, 13, 12, 0.4);
+  }
+  .container{
+    display: flex;
+    width: 80%;
+    background-color: black;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    height: 500px;
+  }
+  .postpic{
+    background-color: black;
+    display: flex;
+    align-items: center;
+
+  }
+  .postpic img{
+    object-fit: contain;
+    width: 100%;
+  }
+  .details{
+    width: 100%;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+  }
+
+.material-symbols-outlined-comment {
+  font-size: 50px;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 200,
+  'opsz' 24
+}
