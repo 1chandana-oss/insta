@@ -104,6 +104,7 @@ import './Createpost.css';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
 const CreatePost = () => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
@@ -127,7 +128,7 @@ const CreatePost = () => {
     if (photo) formData.append('photo', photo);
 
     try {
-      const res = await fetch(`${process.env.REACT_APP_API_URL}/posts/createpost`, {
+      const res = await fetch(`${API_URL}/posts/createpost`, {
         method: 'POST',
         headers: {
           Authorization: 'Bearer ' + token,

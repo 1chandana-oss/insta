@@ -86,6 +86,7 @@ import { toast } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom';
 import { LoginContext } from '../context/LoginContext';
 
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
 const Signin = () => {
   const { setUserlogin } = useContext(LoginContext);
   const navigate = useNavigate();
@@ -104,7 +105,7 @@ const Signin = () => {
     }
 
     try {
-      const res = await fetch(`${process.env.REACT_APP_API_URL}/auth/signin`, {
+      const res = await fetch(`${API_URL}/auth/signin`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -262,7 +262,11 @@ const POST = mongoose.model("POST");
 
 // GET all posts
 router.get("/allposts", requirelogin, async (req, res) => {
-  try {
+  try {echo "keys.js" >> .gitignore
+git rm --cached keys.js
+git commit -m "Remove keys.js from repo"
+git push origin main
+
     const posts = await POST.find()
       .populate("postedBy", "_id name photo")
       .populate("comments.postedBy", "_id name")

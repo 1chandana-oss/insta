@@ -239,6 +239,7 @@ import './Home.css';
 import { toast } from 'react-toastify';
 import { useNavigate, Link } from 'react-router-dom';
 
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
 const Home = () => {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
@@ -268,10 +269,14 @@ const Home = () => {
     }
 
     const fetchPosts = async () => {
+      console.log("Token from localStorage:", token);
+
       try {
-        const res = await fetch(`${process.env.REACT_APP_API_URL}/posts/allposts`, {
+        const res = await fetch(`${API_URL}/posts/allposts`, {
+          method:"GET",
           headers: {
-            Authorization: 'Bearer ' + token,
+            "Authorization": 'Bearer ' + token,
+            "Content-type":"application/json"
           },
         });
 
@@ -305,7 +310,7 @@ const Home = () => {
     const token = localStorage.getItem('jwt');
     console.log("JWT Token:", localStorage.getItem("jwt"));
     try {
-      const res = await fetch(`${process.env.REACT_APP_API_URL}/posts/like/${id}`, {
+      const res = await fetch(`${API_URL}/posts/like/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -324,7 +329,7 @@ const Home = () => {
   const unlikePost = async (id) => {
     const token = localStorage.getItem('jwt');
     try {
-      const res = await fetch(`${process.env.REACT_APP_API_URL}/posts/unlike/${id}`, {
+      const res = await fetch(`${API_URL}/posts/unlike/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -343,7 +348,7 @@ const Home = () => {
   const makeComment = async (text, id) => {
     const token = localStorage.getItem('jwt');
     try {
-      const res = await fetch(`${process.env.REACT_APP_API_URL}/posts/comment/${id}`, {
+      const res = await fetch(`${API_URL}/posts/comment/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
