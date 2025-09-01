@@ -139,11 +139,18 @@ const Signin = () => {
       <div>
         <div className="loginform">
           <img className="signuplogo" src={logo} alt="logo" />
+          <form 
+          onSubmit={(e) => {
+          e.preventDefault(); // stop reload
+          postdata(); // call your login function
+        }}
+          >
           <div>
             <input
               type="email"
               name="email"
               placeholder="Email"
+              autoComplete="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -153,11 +160,13 @@ const Signin = () => {
               type="password"
               name="password"
               placeholder="Password"
+              autoComplete="current-password" 
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <input type="submit" id="login-btn" onClick={postdata} value="Sign In" />
+          </form>
         </div>
 
         <div className="loginform2">

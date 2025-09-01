@@ -12,13 +12,13 @@ const Navbar = ({ login }) => {
     if (login || token) {
       return [
         <>
-          <Link to="/profile"><li>Profile</li></Link>
-          <Link to="/createpost"><li>Create post</li></Link>
+          <li key="profile"><Link  to="/profile">Profile</Link></li>
+          <li key="createpost"><Link  to="/createpost">Create post</Link></li>
 
-          <Link style={{ marginLeft: "20px" }} to="/followingpost">my following
-          </Link>
+          <li key="following" style={{ marginLeft: "20px" }}><Link  to="/followingpost">my following</Link>
+          </li>
           {/* <Link to={" "}> </Link>*/}
-          <button className="primarybtn" onClick={() => {
+          <button key="logout" className="primarybtn" onClick={() => {
             setModalopen(true);
             localStorage.clear();
             navigate("/signin");
@@ -31,8 +31,8 @@ const Navbar = ({ login }) => {
     else {
       return [
         <>
-          <Link to="/signup"><li>SignUp</li></Link>
-          <Link to="/signin"><li>SignIn</li></Link>
+          <li key="sugnup"><Link to="/signup">SignUp</Link></li>
+          <li key="signin"><Link to="/signin">SignIn</Link></li>
         </>
       ]
 
@@ -42,19 +42,19 @@ const Navbar = ({ login }) => {
   const loginStatusMobile = () => {
     const token = localStorage.getItem("jwt")
     if (login || token) {
-      return [
+      return (
         <>
-          <Link to="/"><li><span class="material-symbols-outlined">
+          <li key="homee" ><Link to="/"><span className="material-symbols-outlined">
             home
-          </span></li></Link>
-          <Link to="/profile"><li><span class="material-symbols-outlined">
+          </span></Link></li>
+          <li key="profilee" ><Link to="/profile"><span className="material-symbols-outlined">
             person
-          </span></li></Link>
-          <Link to="/createpost"><li><span class="material-symbols-outlined">
+          </span></Link></li>
+          <li key="createposts"><Link to="/createpost"><span className="material-symbols-outlined">
             add_box
-          </span></li></Link>
+          </span></Link></li>
 
-          <Link style={{ marginLeft: "20px" }} to="/followingpost"><li><span class="material-symbols-outlined">
+          <Link style={{ marginLeft: "20px" }} to="/followingpost"><li><span className="material-symbols-outlined">
             explore
           </span></li>
           </Link>
@@ -64,12 +64,12 @@ const Navbar = ({ login }) => {
             localStorage.clear();
             navigate("/signin");
           }}
-          ><span class="material-symbols-outlined">
+          ><span className="material-symbols-outlined">
               logout
             </span></li>
         </>
 
-      ]
+        )
     }
     else {
       return [
